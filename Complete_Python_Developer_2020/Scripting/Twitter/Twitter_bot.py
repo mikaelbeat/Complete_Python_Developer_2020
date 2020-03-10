@@ -1,8 +1,8 @@
 
 import tweepy, time
 
-auth = tweepy.OAuthHandler("OIrdiIGNB3eIvHum8o2jqeT3y", "t3fPEUaCzxBRCd8dh0ixyOttZwKYdSxX3COEWVxmQwHkTvhjgE")
-auth.set_access_token("988679202609291264-KAwY4tRDP2qwO3dpgrCuKjDvrzN1Iln", "QSH5onkJJhzGnpYbdDuBU7sS4wPIa2fNirvRfrqrR7U40")
+auth = tweepy.OAuthHandler("", "")
+auth.set_access_token("", "")
 
 api = tweepy.API(auth)
 user = api.me()
@@ -24,6 +24,21 @@ def limit_handler(cursor):
 
 for follower in limit_handler(tweepy.Cursor(api.followers).items()):
     print(follower.name)
-    if follower.name === "name":
+    if follower.name == "Sven":
         follower.follow()
+        break
 
+
+print("\nGet all Tweets with given argument\n")
+
+search_iten = "Python"
+number_of_tweets = 2
+
+for tweet in tweepy.Cursor(api.search, search_iten).items(number_of_tweets):
+    try:
+        tweet.favorite()
+        print("I liked that tweet!")
+    except tweet.TweepyError as e:
+        print(e.reason)
+    except StopIteration:
+        break
