@@ -19,6 +19,9 @@ links = soup.select(".storylink")
 subtext = soup.select(".subtext")
 #print(votes[0])
 
+def Sort_by_votes(list):
+    return sorted(list, key= lambda k:k["votes"], reverse=True)
+
 def create_custom_list(links, subtext):
     data = []
     for idx, item in enumerate(links):
@@ -29,7 +32,7 @@ def create_custom_list(links, subtext):
             points = int(vote[0].getText().replace(" points", ""))
             if points > 99:
                 data.append({"title": title, "link": href, "votes": points})
-    return data
+    return Sort_by_votes(data)
 
 
 pprint.pprint(create_custom_list(links, subtext))
