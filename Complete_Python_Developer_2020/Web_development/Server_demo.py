@@ -20,10 +20,14 @@ app = Flask(__name__)
 print(__name__)
 
 
-@app.route("/")
-def my_home():
-    return render_template("index.html")
+@app.route("/<username>/<int:id>")
+def start_page(username=None, id=None):
+    return render_template("index_demo.html", name=username, id=id)
 
 @app.route("/about.html")
 def blog_page():
     return render_template("about_demo.html")
+
+@app.route("/blog/2020/cats")
+def blog_page2():
+    return "This is a blog page about cats!"
