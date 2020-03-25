@@ -24,6 +24,6 @@ print(__name__)
 def my_home():
     return render_template("index.html")
 
-@app.route("/about.html")
-def blog_page():
-    return render_template("about_demo.html")
+@app.route("/<string:page_name>")
+def html_page(page_name):
+    return render_template(page_name)
