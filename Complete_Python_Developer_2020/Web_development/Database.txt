@@ -1,0 +1,9 @@
+
+hei@gmail.com, Hello, Just for testing!
+demo@gmail.com, Demo, Demo
+kiisseli@gmail.com, Kiisseliä, Osta kiisseliä!
+hei@gmail.com, Hello, dadsa
+hei@gmail.com, Hello, dadsa
+hei@gmail.com, dd, dd
+hei@gmail.com, dd, dd
+demo@gmail.com, dada, dddd
